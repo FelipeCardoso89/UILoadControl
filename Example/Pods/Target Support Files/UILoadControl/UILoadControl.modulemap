@@ -1,0 +1,6 @@
+framework module UILoadControl {
+  umbrella header "UILoadControl-umbrella.h"
+
+  export *
+  module * { export * }
+}

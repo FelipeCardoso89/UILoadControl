@@ -13,10 +13,10 @@ public class UILoadControl: UIControl {
   
   private let activityIndicatorView: UIActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.Gray)
   
-  var heightLimit: CGFloat = 80.0
-  var scrollView: UIScrollView = UIScrollView()
+  public var heightLimit: CGFloat = 80.0
+  public private (set) var loading: Bool = false
   
-  private (set) var loading: Bool = false
+  var scrollView: UIScrollView = UIScrollView()
   
   override public var frame: CGRect {
     didSet{

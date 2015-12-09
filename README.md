@@ -10,9 +10,9 @@ It can be used to indicate data loading at the bottom of ```UITableView ``` or `
 
 Check this examples:
 
-image 1
+![]()
 
-image 2
+![]()
 
 By default ```UIControl``` can only be placed as ```UITableView```'s subview and are automatically handled as ```UIRefreshControl``` and placed at the its top. 
 

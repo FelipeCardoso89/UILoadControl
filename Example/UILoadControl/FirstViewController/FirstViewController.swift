@@ -14,7 +14,7 @@ class FirstViewController: UIViewController {
   
   @IBOutlet weak var clvItem: UICollectionView!
   
-  var numberOfItems: Int = 30
+  var numberOfItems: Int = 20
   var loadDelaySeg: Double = 4
   
   override func viewDidLoad() {
@@ -24,6 +24,7 @@ class FirstViewController: UIViewController {
     clvItem.dataSource = self
     
     let loadControl = UILoadControl()
+    //loadControl.heightLimit = 50.0 //The default is 80.0
     loadControl.addTarget(self, action: "loadMore:", forControlEvents: UIControlEvents.ValueChanged)
     clvItem.loadControl = loadControl
   }
