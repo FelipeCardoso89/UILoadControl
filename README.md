@@ -5,11 +5,13 @@
 [![License](https://img.shields.io/cocoapods/l/UILoadControl.svg?style=flat)](http://cocoapods.org/pods/UILoadControl)
 [![Platform](https://img.shields.io/cocoapods/p/UILoadControl.svg?style=flat)](http://cocoapods.org/pods/UILoadControl)
 
-UILoadControl is inspired by UIRefreshControl.
-It can be used to indicate a data loading at the botton of UITableView or UICollectionView.
+UILoadControl is inspired by  ```UIRefreshControl ```.
+It can be used to indicate data loading at the bottom of ```UITableView ``` or ```UICollectionView ```.
 
 Check this examples:
+
 image 1
+
 image 2
 
 By default ```UIControl``` can only be placed as ```UITableView```'s subview and are automatically handled as ```UIRefreshControl``` and placed at the its top. 
