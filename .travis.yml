@@ -9,7 +9,6 @@ before_install:
  - gem install cocoapods # Since Travis is not always on latest version
  - pod install --project-directory=Example
 
-script: 
-- xctool -project UILoadControl.xcodeproj -scheme UILoadControl-Example -sdk iphonesimulator -destination 'platform=iOS Simulator,OS=9.1,name=iPhone 6' ONLY_ACTIVE_ARCH=NO clean build
-- xctool -project UILoadControl.xcodeproj -scheme UILoadControl-Example -sdk iphonesimulator -destination 'platform=iOS Simulator,OS=8.4,name=iPhone 6' ONLY_ACTIVE_ARCH=NO clean build
-- pod lib lint
+script:  
+ - set -e && xcodebuild -workspace Example/UILoadControl.xcworkspace -scheme UILoadControl-Example -sdk iphonesimulator -destination 'platform=iOS Simulator,OS=9.1,name=iPhone 6' ONLY_ACTIVE_ARCH=NO clean build
+ - pod lib lint
