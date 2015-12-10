@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/cocoapods/l/UILoadControl.svg?style=flat)](http://cocoapods.org/pods/UILoadControl)
 [![Platform](https://img.shields.io/cocoapods/p/UILoadControl.svg?style=flat)](http://cocoapods.org/pods/UILoadControl)
 
-UILoadControl is inspired by  ```UIRefreshControl ```.
+UILoadControl is inspired by ```UIRefreshControl ```.
 It can be used to indicate data loading at the bottom of ```UITableView ``` or ```UICollectionView ```.
 
 Check this examples:
@@ -13,7 +13,7 @@ Check this examples:
 <img src="https://github.com/FelipeCardoso89/UILoadControl/blob/master/ScreenShots/UICollectionView.gif" width="350" heigth="550">
 <img src="https://github.com/FelipeCardoso89/UILoadControl/blob/master/ScreenShots/UITableView.gif" width="350" heigth="550">
 
-By default ```UIControl``` can only be placed as ```UITableView```'s subview and it's automatically handled as ```UIRefreshControl``` and placed at the its top. 
+By default ```UIControl``` can only be placed as ```UITableView```'s subview and it's automatically handled as ```UIRefreshControl``` and placed at its top. 
 
 ```UILoadControl``` is a subclass of ```UIControl```, place inside a ```UIView``` (```loadControlView```) and this view is placed as a subview of ```UIScrollView```.
 The ```UILoadControl``` has a ```UIScrollView``` extension (```UIScrollView_Extesnion```) that manage the ```UILoadControl```'s layout.
