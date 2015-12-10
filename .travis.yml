@@ -12,5 +12,5 @@ before_install:
  - pod install --project-directory=Example
 
 script:  
- - set -e && xcodebuild -workspace Example/UILoadControl.xcworkspace -scheme UILoadControl-Example -sdk iphonesimulator9.0 ONLY_ACTIVE_ARCH=NO clean build
+ - set -e && xcodebuild -workspace Example/UILoadControl.xcworkspace -scheme UILoadControl-Example -sdk iphonesimulator -destination 'platform=iOS Simulator,OS=9.1,name=iPhone 6' ONLY_ACTIVE_ARCH=NO clean build
  - pod lib lint
