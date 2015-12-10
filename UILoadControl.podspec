@@ -26,7 +26,7 @@ The UILoadControl can be used as a trigger to load next page of a paginated UICo
   s.homepage         = "https://github.com/FelipeCardoso89/UILoadControl"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
-  s.author           = { "Felipe Antonio Cardoso" }
+  s.author           = { "Felipe Antonio Cardoso" => "felipe.antonio.cardoso@gmail.com" }
   s.source           = { :git => "https://github.com/FelipeCardoso89/UILoadControl.git", :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/FelipeCardoso89'
 
