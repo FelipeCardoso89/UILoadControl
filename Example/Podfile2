@@ -1,0 +1,16 @@
+source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
+
+target 'UILoadControl_Example', :exclusive => true do
+  pod "UILoadControl", :path => "../"
+end
+
+target 'UILoadControl_Tests', :exclusive => true do
+  pod "UILoadControl", :path => "../"
+
+  pod 'Quick', '~> 0.8.0'
+  pod 'Nimble', '3.0.0'
+  pod 'FBSnapshotTestCase'
+  pod 'Nimble-Snapshots'
+
+end
