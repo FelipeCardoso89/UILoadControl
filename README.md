@@ -1,6 +1,6 @@
 # UILoadControl
 
-[![CI Status](http://img.shields.io/travis/Felipe Antonio Cardoso/UILoadControl.svg?style=flat)](https://travis-ci.org/Felipe Antonio Cardoso/UILoadControl)
+[![CI Status](http://img.shields.io/travis/FelipeCardoso89/UILoadControl.svg?style=flat)](https://travis-ci.org/FelipeCardoso89/UILoadControl)
 [![Version](https://img.shields.io/cocoapods/v/UILoadControl.svg?style=flat)](http://cocoapods.org/pods/UILoadControl)
 [![License](https://img.shields.io/cocoapods/l/UILoadControl.svg?style=flat)](http://cocoapods.org/pods/UILoadControl)
 [![Platform](https://img.shields.io/cocoapods/p/UILoadControl.svg?style=flat)](http://cocoapods.org/pods/UILoadControl)
