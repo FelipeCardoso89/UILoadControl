@@ -15,7 +15,7 @@ Check this examples:
 
 By default ```UIControl``` can only be placed as ```UITableView```'s subview and it's automatically handled as ```UIRefreshControl``` and placed at its top. 
 
-```UILoadControl``` is a subclass of ```UIControl```, place inside a ```UIView``` (```loadControlView```) and this view is placed as a subview of ```UIScrollView```.
+```UILoadControl``` is a subclass of ```UIControl```, placed inside a ```UIView``` (```loadControlView```) and this view is placed as a subview of ```UIScrollView```.
 The ```UILoadControl``` has a ```UIScrollView``` extension (```UIScrollView_Extesnion```) that manage the ```UILoadControl```'s layout.
 
 All ```UIScrollView``` take the hability to handle ```UILoadControl``` in its ```.loadControl``` property.
