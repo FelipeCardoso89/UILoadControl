@@ -73,3 +73,7 @@ Felipe Antonio Cardoso, felipe.antonio.cardoso@gmail.com
 ## License
 
 UILoadControl is available under the MIT license. See the [LICENSE](https://github.com/FelipeCardoso89/UILoadControl/blob/master/LICENSE) file for more info.
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/FelipeCardoso89/uiloadcontrol/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
