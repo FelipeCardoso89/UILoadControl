@@ -69,7 +69,7 @@ extension UILoadControl {
   Make sure that the trigger target is active
   */
   private func reloadTargetsIfNedeed() {
-    let selectorName: Selector = "didValueChange:"
+    let selectorName: Selector = #selector(UILoadControl.didValueChange(_:))
     if self.actionsForTarget(self, forControlEvent: UIControlEvents.ValueChanged) == nil {
       self.addTarget(self, action: selectorName, forControlEvents: UIControlEvents.ValueChanged)
     }

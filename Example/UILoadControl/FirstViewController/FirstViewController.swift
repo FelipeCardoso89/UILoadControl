@@ -25,7 +25,7 @@ class FirstViewController: UIViewController {
     
     let loadControl = UILoadControl()
     //loadControl.heightLimit = 50.0 //The default is 80.0
-    loadControl.addTarget(self, action: "loadMore:", forControlEvents: UIControlEvents.ValueChanged)
+    loadControl.addTarget(self, action: #selector(FirstViewController.loadMore(_:)), forControlEvents: UIControlEvents.ValueChanged)
     clvItem.loadControl = loadControl
   }
   

@@ -24,7 +24,7 @@ class SecondViewController: UIViewController {
     tbmItem.dataSource = self
     
     let loadControl = UILoadControl()
-    loadControl.addTarget(self, action: "loadMore:", forControlEvents: UIControlEvents.ValueChanged)
+    loadControl.addTarget(self, action: #selector(SecondViewController.loadMore(_:)), forControlEvents: UIControlEvents.ValueChanged)
     tbmItem.loadControl = loadControl
   }
   
