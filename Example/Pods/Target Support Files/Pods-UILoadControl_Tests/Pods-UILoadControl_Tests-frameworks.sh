@@ -85,15 +85,7 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-UILoadControl_Tests/UILoadControl.framework"
-  install_framework "Pods-UILoadControl_Tests/FBSnapshotTestCase.framework"
-  install_framework "Pods-UILoadControl_Tests/Nimble.framework"
-  install_framework "Pods-UILoadControl_Tests/Nimble_Snapshots.framework"
-  install_framework "Pods-UILoadControl_Tests/Quick.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-UILoadControl_Tests/UILoadControl.framework"
-  install_framework "Pods-UILoadControl_Tests/FBSnapshotTestCase.framework"
-  install_framework "Pods-UILoadControl_Tests/Nimble.framework"
-  install_framework "Pods-UILoadControl_Tests/Nimble_Snapshots.framework"
-  install_framework "Pods-UILoadControl_Tests/Quick.framework"
 fi

@@ -19,6 +19,7 @@ extension UIScrollView {
   */
   
   private struct AssociatedKeys {
+    static var delegate: UIScrollViewDelegate?
     static var loadControl: UILoadControl?
     private static var loadControlView: UIView?
   }
@@ -34,13 +35,13 @@ extension UIScrollView {
     set {
       if let newValue = newValue {
         objc_setAssociatedObject(self, &AssociatedKeys.loadControl, newValue as UILoadControl?, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-        self.showRefreshControlBottomIfNeeded()
+        self.updateLoadControl()
       }
     }
   }
   
   /*
-  UILoadControl view container
+  UILoadControl view containers
   */
   private var loadControlView: UIView? {
     get {
@@ -55,40 +56,35 @@ extension UIScrollView {
   }
 }
 
-extension UIScrollView: UIScrollViewDelegate {
-  
-  /*
-  Attention: You must call super.scrollViewDidScroll if you override scrollViewDidScroll
-  */
-  public func scrollViewDidScroll(scrollView: UIScrollView) {
-    guard let loadControl = self.loadControl else {
-      return
-    }
-    
-    loadControl.updateUI()
-  }
-}
-
 extension UIScrollView {
+
+  public override func setValue(value: AnyObject?, forKey key: String) {
+    super.setValue(value, forKey: key)
+  }
   
-  /*
-  Place UILoadControl if its not in the scrollView
-  */
-  private func showRefreshControlBottomIfNeeded(){
-    
+  private func updateLoadControl() {
     guard let loadControl = self.loadControl else {
       return
     }
     
-    self.delegate = self
     loadControl.scrollView = self
+    return setupLoadControlViewWithControl(loadControl)
+  }
+  
+  
+  private func setupLoadControlViewWithControl(control: UILoadControl) {
     
-    if self.loadControlView == nil {
-      let loadControlView = UIView()
-      loadControlView.clipsToBounds = true
-      loadControlView.addSubview(loadControl)
-      addSubview(loadControlView)
-      self.loadControlView = loadControlView
+    guard let loadControlView = self.loadControlView else {
+      self.loadControlView = UIView()
+      self.loadControlView?.clipsToBounds = true
+      self.loadControlView?.addSubview(control)
+      return addSubview(self.loadControlView!)
     }
+    
+    if loadControlView.subviews.contains(control) {
+      return
+    }
+    
+    return loadControlView.addSubview(control)
   }
 }

@@ -22,10 +22,7 @@ class SecondViewController: UIViewController {
     
     tbmItem.delegate = self
     tbmItem.dataSource = self
-    
-    let loadControl = UILoadControl()
-    loadControl.addTarget(self, action: "loadMore:", forControlEvents: UIControlEvents.ValueChanged)
-    tbmItem.loadControl = loadControl
+    tbmItem.loadControl = UILoadControl(target: self, action: #selector(SecondViewController.loadMore(_:)))
   }
   
   override func didReceiveMemoryWarning() {
@@ -55,4 +52,10 @@ extension SecondViewController: UITableViewDataSource, UITableViewDelegate {
     return cell
   }
   
+}
+
+extension SecondViewController: UIScrollViewDelegate {
+  func scrollViewDidScroll(scrollView: UIScrollView) {
+    scrollView.loadControl?.update()
+  }
 }
