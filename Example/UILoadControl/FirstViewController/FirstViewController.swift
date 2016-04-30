@@ -23,10 +23,9 @@ class FirstViewController: UIViewController {
     clvItem.delegate = self
     clvItem.dataSource = self
     
-    let loadControl = UILoadControl()
-    //loadControl.heightLimit = 50.0 //The default is 80.0
-    loadControl.addTarget(self, action: #selector(FirstViewController.loadMore(_:)), forControlEvents: UIControlEvents.ValueChanged)
-    clvItem.loadControl = loadControl
+    clvItem.loadControl = UILoadControl(target: self, action: #selector(FirstViewController.loadMore(_:)))
+    clvItem.loadControl?.heightLimit = 50.0 //The default is 80.0
+    clvItem.delegate = self
   }
   
   override func didReceiveMemoryWarning() {
@@ -56,4 +55,10 @@ extension FirstViewController: UICollectionViewDataSource, UICollectionViewDeleg
     return cell
   }
   
+}
+
+extension FirstViewController: UIScrollViewDelegate {
+  func scrollViewDidScroll(scrollView: UIScrollView) {
+    scrollView.loadControl?.update()
+  }
 }

@@ -11,7 +11,11 @@ import Foundation
 
 public class UILoadControl: UIControl {
   
-  private let activityIndicatorView: UIActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.Gray)
+  private var activityIndicatorView: UIActivityIndicatorView!
+  private var originalDelegate: UIScrollViewDelegate?
+  
+  internal var target: AnyObject?
+  internal var action: Selector!
   
   public var heightLimit: CGFloat = 80.0
   public private (set) var loading: Bool = false
@@ -36,6 +40,14 @@ public class UILoadControl: UIControl {
     self.initialize()
   }
   
+  public init(target: AnyObject?, action: Selector) {
+    self.init()
+    self.initialize()
+    self.target = target
+    self.action = action
+    addTarget(self.target, action: self.action, forControlEvents: .ValueChanged)
+  }
+  
   override public func awakeFromNib() {
     super.awakeFromNib()
   }
@@ -43,43 +55,34 @@ public class UILoadControl: UIControl {
   override public func layoutSubviews() {
     super.layoutSubviews()
   }
-
+  
   /*
-  Update layout at finsih to load
-  */
+   Update layout at finsih to load
+   */
   public func endLoading(){
     setLoading(false)
     fixPosition()
   }
   
+  public func update() {
+    updateUI()
+  }
 }
 
 extension UILoadControl {
   
   /*
-  Initilize the control
-  */
+   Initilize the control
+   */
   private func initialize(){
+    self.addTarget(self, action: #selector(UILoadControl.didValueChange(_:)), forControlEvents: .ValueChanged)
     setupActivityIndicator()
-    self.reloadTargetsIfNedeed()
   }
-  
-  
+ 
   /*
-  Make sure that the trigger target is active
-  */
-  private func reloadTargetsIfNedeed() {
-    let selectorName: Selector = #selector(UILoadControl.didValueChange(_:))
-    if self.actionsForTarget(self, forControlEvent: UIControlEvents.ValueChanged) == nil {
-      self.addTarget(self, action: selectorName, forControlEvents: UIControlEvents.ValueChanged)
-    }
-  }
-  
-  
-  /*
-  Check if the control frame should be updated.
-  This method is called after user hits the end of the scrollView
-  */
+   Check if the control frame should be updated.
+   This method is called after user hits the end of the scrollView
+   */
   func updateUI(){
     if self.scrollView.contentSize.height < self.scrollView.bounds.size.height {
       return
@@ -92,8 +95,8 @@ extension UILoadControl {
   }
   
   /*
-  Update layout after user scroll the scrollView
-  */
+   Update layout after user scroll the scrollView
+   */
   private func updateFrame(rect: CGRect){
     guard let superview = self.superview else {
       return
@@ -106,15 +109,15 @@ extension UILoadControl {
   }
   
   /*
-  Place control at the scrollView bottom
-  */
+   Place control at the scrollView bottom
+   */
   private func fixPosition(){
     self.updateFrame(CGRectMake(0.0, scrollView.contentSize.height, scrollView.frame.size.width, 0.0))
   }
   
   /*
-  Set layout to a "loading" or "not loading" state
-  */
+   Set layout to a "loading" or "not loading" state
+   */
   private func setLoading(isLoading: Bool){
     loading = isLoading
     dispatch_async(dispatch_get_main_queue()) { [unowned self] in
@@ -134,10 +137,15 @@ extension UILoadControl {
   }
   
   /*
-  Prepare activityIndicator
-  */
+   Prepare activityIndicator
+   */
   private func setupActivityIndicator(){
     
+    if self.activityIndicatorView != nil {
+      return
+    }
+    
+    self.activityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.Gray)
     self.activityIndicatorView.hidesWhenStopped = false
     self.activityIndicatorView.color = UIColor.darkGrayColor()
     self.activityIndicatorView.transform = CGAffineTransformMakeScale(1.4, 1.4)

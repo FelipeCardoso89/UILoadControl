@@ -1,5 +1,5 @@
 PODS:
-  - UILoadControl (1.0.0)
+  - UILoadControl (1.0.1)
 
 DEPENDENCIES:
   - UILoadControl (from `../`)
@@ -9,6 +9,6 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  UILoadControl: 3bdcfcfa096191e792d798f5942c3dd522fa933e
+  UILoadControl: 9388422b1b1ff532c3c5fe05247fecb19ca5cbcf
 
 COCOAPODS: 0.39.0
