@@ -28,23 +28,34 @@ Attach ```UILoadControl``` to any ```UIScrollView``` you want, like in the examp
 ```swift
 import UILoadControl
 
-override func viewDidLoad() {
-    super.viewDidLoad()
-    let newLoadControl = UILoadControl()
-    newLoadControl.heightLimit = 100.0 //The default is 80.0
-    newLoadControl.addTarget(self, action: "loadMoreData:", forControlEvents: UIControlEvents.ValueChanged)
-    self.tableView.loadControl = newLoadControl
-}
-
-func loadMoreData(sender: AnyObject?) {
-    //intentional Delay that represents a Network asyc call...
-    let delaySeconds = 4
-    let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delaySeconds * Double(NSEC_PER_SEC)))
-    dispatch_after(delayTime, dispatch_get_main_queue()) {
-      self.tableView.loadControl!.endLoading() //Update UILoadControl frame to the new UIScrollView bottom.
-      self.tableView.reloadData()
+class MyViewController: UIViewController, UIScrollViewDelegate {
+    
+    var tableView: UITableView!
+    
+    //Setup loadControl on tableView
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.loadControl = UILoadControl(target: self, action: #selector(SecondViewController.loadMore(_:)))
+        tableView.loadControl?.heightLimit = 100.0 //The default is 80.0
     }
-  }
+    
+    //update loadControl when user scrolls de tableView
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        scrollView.loadControl?.update()
+    }
+
+    //load more tableView data
+    func loadMoreData(sender: AnyObject?) {
+        //intentional Delay that represents a Network asyc call...
+        let delaySeconds = 4
+        let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delaySeconds * Double(NSEC_PER_SEC)))
+        dispatch_after(delayTime, dispatch_get_main_queue()) {
+            tableView.loadControl!.endLoading() //Update UILoadControl frame to the new UIScrollView bottom.
+            tableView.reloadData()
+        }
+    }
 }
 ```
 That's it!
