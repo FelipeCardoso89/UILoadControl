@@ -1,9 +1,13 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="GeX-Os-LkC">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="GeX-Os-LkC">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--CollectionView-->
@@ -15,12 +19,12 @@
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="KaO-aX-IVW">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6Dn-Hi-Npj">
                                     <size key="itemSize" width="100" height="100"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -38,13 +42,12 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XaH-KY-fN1">
                                                     <rect key="frame" x="8" y="8" width="84" height="84"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="XaH-KY-fN1" firstAttribute="top" secondItem="PPp-HT-mol" secondAttribute="top" constant="8" id="14F-eu-K1E"/>
                                             <constraint firstAttribute="trailing" secondItem="XaH-KY-fN1" secondAttribute="trailing" constant="8" id="5yr-Sy-rDY"/>
@@ -58,7 +61,7 @@
                                 </cells>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="KaO-aX-IVW" secondAttribute="trailing" id="96S-sd-bwE"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="KaO-aX-IVW" secondAttribute="bottom" id="K8N-wI-2nU"/>
@@ -73,14 +76,13 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="clvItem" destination="KaO-aX-IVW" id="R7v-aa-WbP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1095" y="427"/>
+            <point key="canvasLocation" x="726" y="427"/>
         </scene>
         <!--TableView-->
         <scene sceneID="WUe-u4-KDN">
@@ -91,25 +93,25 @@
                         <viewControllerLayoutGuide type="bottom" id="oQx-4M-GtT"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="K4J-Zu-FIN">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hgI-uT-vEO">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellIdentifier" id="ilh-W6-vvt">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ilh-W6-vvt" id="sKm-La-wJz">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="hgI-uT-vEO" firstAttribute="top" secondItem="xbl-RA-Wpc" secondAttribute="bottom" id="DD1-9F-jMV"/>
                             <constraint firstItem="hgI-uT-vEO" firstAttribute="leading" secondItem="K4J-Zu-FIN" secondAttribute="leading" id="c3V-kj-2SL"/>
@@ -125,12 +127,12 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="tbmItem" destination="hgI-uT-vEO" id="dBB-kO-uFQ"/>
+                        <outlet property="tblItem" destination="hgI-uT-vEO" id="bha-qh-Eoj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tAn-0l-wMt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1511" y="427"/>
+            <point key="canvasLocation" x="1503" y="427"/>
         </scene>
         <!--ScrollView-->
         <scene sceneID="3Yi-nB-7aS">
@@ -141,24 +143,27 @@
                         <viewControllerLayoutGuide type="bottom" id="aas-wf-ysw"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="cuu-qc-gQL">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2QZ-XP-tvV">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w2z-rv-Ndz">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="36.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1700"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YOM-da-Vxa">
-                                                <rect key="frame" x="8" y="8" width="304" height="20.5"/>
-                                                <mutableString key="text">But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?</mutableString>
+                                                <rect key="frame" x="8" y="8" width="359" height="1684"/>
+                                                <mutableString key="text">Lorem ipsum dolor sit amet, quis placerat quis ut, lectus mi pellentesque aliquam sed, egestas rutrum aliquam, ante vel enim nunc in. Placerat in eu porttitor, non ipsum praesent nulla felis odio arcu, nam libero sollicitudin pede erat odio sociis, turpis neque lacus euismod turpis urna. Nullam wisi velit sollicitudin tristique mauris ac. Porttitor sed sit tempus enim lectus, lobortis turpis ante. Elit vestibulum pellentesque, sed donec nibh wisi nibh integer. Donec tempus nec nulla fringilla vitae suscipit, proin velit nec, quam nibh ante tempus non cursus aliquam, mollis amet amet mauris nec tincidunt. Lobortis orci, quam a ligula rhoncus, gravida sollicitudin massa sollicitudin volutpat in ornare, sapien interdum cras. Tellus volutpat tempor sem bibendum orci ut, tempor in vivamus odio, ipsum parturient quis convallis. Et pellentesque. Wisi magna. Diam aliquam in suscipit dolor aliquam, aliquam fames, imperdiet vestibulum, dolor lacus sed ut id, duis eros. Sed commodo lobortis id id amet magna, hendrerit quis ante ultrices, duis ad adipiscing, cras ligula et venenatis proin, vestibulum ac nunc et vitae eros cras.
+Amet libero dolor feugiat a at quam. Fusce est enim suspendisse ullamcorper lorem, mi curabitur est nam turpis velit, tincidunt felis quisque eget et imperdiet, dolor in. Eget et a a, nisl arcu amet, ipsum optio rhoncus est ac phasellus, suspendisse rutrum sociis vitae nam elit, amet at pellentesque. Non nec dictumst mauris risus augue felis, feugiat mattis nam, duis quis netus sed velit amet massa, aliquam vel. Vitae eget, bibendum erat risus adipiscing urna eros dignissimos, risus sit justo per ante porttitor, in lectus mi in congue, vel commodo. Ut nullam ut justo id lectus, ac velit. Elementum odio hendrerit, varius turpis wisi vel mattis nunc, posuere integer, dolor enim eu a.
+Dolor proin dolor scelerisque vestibulum nonummy, sed ut accumsan quisque mi risus, est tellus in sit per porta vestibulum, cras et dis ullamcorper proin quam, ut malesuada consequat elementum. Ac nibh vitae placerat sed, consectetuer mi tempus quis, semper arcu suspendisse, nisl maecenas facilisi odit eros lacinia. Mattis euismod enim amet. Sed mauris et eos donec eros, consectetuer tincidunt tincidunt diam. Aliquet enim viverra at vivamus, volutpat cum maecenas tincidunt, vivamus urna impedit eget, nulla scelerisque dui conubia pellentesque lacinia eros, consequat velit. Fusce quisque lectus sagittis amet nec, pulvinar ac ornare eleifend accumsan, sed nibh sed nulla, ipsum tempor habitasse in turpis. Ipsum mauris, justo a turpis sit eleifend non commodo, placerat ut diam aliqua eleifend consequat tellus, vel adipiscing sollicitudin quisque, amet nunc. Scelerisque adipiscing vestibulum dolor nunc venenatis quos. Massa aliquam imperdiet erat fermentum tincidunt, arcu ultrices volutpat euismod, integer a fermentum facilisis quam massa. Suspendisse orci habitasse.
+Condimentum ante risus sed sit nibh metus, in neque. Dolor donec, ac nunc amet congue quis dolor lacus, pede gravida mauris. Feugiat venenatis arcu magna pede vestibulum. Egestas eget aliquam amet suspendisse aenean pellentesque, risus augue, commodo urna netus odio urna. Tincidunt orci ultricies erat in in eget. Luctus vel blandit et, penatibus elementum. Pharetra pretium metus libero ante lacus, elit porttitor donec rhoncus. Id sapien, nisl torquent sed diam ipsum, aliquam et ut suscipit vivamus, commodo urna imperdiet pede. Pede vel nisl lorem vivamus, quis amet pharetra et odio tincidunt sapien, elit suspendisse mi, molestie ullamcorper vel vitae.</mutableString>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="YOM-da-Vxa" firstAttribute="trailing" secondItem="w2z-rv-Ndz" secondAttribute="trailingMargin" id="8cp-a9-ior"/>
                                             <constraint firstItem="YOM-da-Vxa" firstAttribute="bottom" secondItem="w2z-rv-Ndz" secondAttribute="bottomMargin" id="S0I-mn-eKv"/>
@@ -176,7 +181,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" red="0.36470588240000001" green="0.71372549019999998" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.36470588240000001" green="0.71372549019999998" blue="0.64313725489999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="2QZ-XP-tvV" firstAttribute="top" secondItem="ZOp-et-y3k" secondAttribute="bottom" id="Fvl-q9-lbh"/>
                             <constraint firstAttribute="trailing" secondItem="2QZ-XP-tvV" secondAttribute="trailing" id="PeC-5k-QW8"/>
@@ -190,14 +195,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rbr-kP-efZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1941" y="427"/>
+            <point key="canvasLocation" x="2361" y="427"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Wy0-VD-VVw">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GeX-Os-LkC" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="P5M-9f-f0d">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -209,7 +213,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Md3-Sa-1zn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="679" y="427"/>
+            <point key="canvasLocation" x="-166" y="427"/>
         </scene>
     </scenes>
 </document>

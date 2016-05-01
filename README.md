@@ -26,6 +26,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 Attach ```UILoadControl``` to any ```UIScrollView``` you want, like in the example below:
 ```swift
+
 import UILoadControl
 
 class MyViewController: UIViewController, UIScrollViewDelegate {
@@ -37,17 +38,17 @@ class MyViewController: UIViewController, UIScrollViewDelegate {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.loadControl = UILoadControl(target: self, action: "loadMore:")
+        tableView.loadControl = UILoadControl(target: self, action: #selector(loadMore(sender:)))
         tableView.loadControl?.heightLimit = 100.0 //The default is 80.0
     }
     
     //update loadControl when user scrolls de tableView
-    func scrollViewDidScroll(scrollView: UIScrollView) {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
         scrollView.loadControl?.update()
     }
 
     //load more tableView data
-    func loadMoreData(sender: AnyObject?) {
+    func loadMore(sender: AnyObject?) {
         AnyAPIManager.defaultManager.giveMoreData() { (response, error) in
             //... Manage response
             self.tableView.loadControl?.endLoading() //Update UILoadControl frame to the new UIScrollView bottom.
@@ -55,12 +56,13 @@ class MyViewController: UIViewController, UIScrollViewDelegate {
         }
     }
 }
+
 ```
 That's it!
 
 ## Requirements
 
-XCode 7.0, iOS 8.0
+XCode 7.0, iOS 8.0, Swift 3
 
 ## Installation
 
