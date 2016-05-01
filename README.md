@@ -48,12 +48,10 @@ class MyViewController: UIViewController, UIScrollViewDelegate {
 
     //load more tableView data
     func loadMoreData(sender: AnyObject?) {
-        //intentional Delay that represents a Network asyc call...
-        let delaySeconds = 4
-        let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delaySeconds * Double(NSEC_PER_SEC)))
-        dispatch_after(delayTime, dispatch_get_main_queue()) {
-            tableView.loadControl!.endLoading() //Update UILoadControl frame to the new UIScrollView bottom.
-            tableView.reloadData()
+        AnyAPIManager.defaultManager.giveMoreData() { (response, error) in
+            //... Manage response
+            self.tableView.loadControl!.endLoading() //Update UILoadControl frame to the new UIScrollView bottom.
+            self.tableView.reloadData()
         }
     }
 }
