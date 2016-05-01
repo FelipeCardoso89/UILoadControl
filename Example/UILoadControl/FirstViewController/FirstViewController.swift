@@ -23,7 +23,7 @@ class FirstViewController: UIViewController {
     clvItem.delegate = self
     clvItem.dataSource = self
     
-    clvItem.loadControl = UILoadControl(target: self, action: #selector(FirstViewController.loadMore(_:)))
+    clvItem.loadControl = UILoadControl(target: self, action: "loadMore:")
     clvItem.loadControl?.heightLimit = 50.0 //The default is 80.0
     clvItem.delegate = self
   }

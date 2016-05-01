@@ -37,7 +37,7 @@ class MyViewController: UIViewController, UIScrollViewDelegate {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.loadControl = UILoadControl(target: self, action: #selector(SecondViewController.loadMoreData(_:)))
+        tableView.loadControl = UILoadControl(target: self, action: "loadMore:")
         tableView.loadControl?.heightLimit = 100.0 //The default is 80.0
     }
     

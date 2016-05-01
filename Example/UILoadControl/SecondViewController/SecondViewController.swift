@@ -22,7 +22,7 @@ class SecondViewController: UIViewController {
     
     tbmItem.delegate = self
     tbmItem.dataSource = self
-    tbmItem.loadControl = UILoadControl(target: self, action: #selector(SecondViewController.loadMore(_:)))
+    tbmItem.loadControl = UILoadControl(target: self, action: "loadMore:")
   }
   
   override func didReceiveMemoryWarning() {
