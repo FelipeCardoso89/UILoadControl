@@ -50,7 +50,7 @@ class MyViewController: UIViewController, UIScrollViewDelegate {
     func loadMoreData(sender: AnyObject?) {
         AnyAPIManager.defaultManager.giveMoreData() { (response, error) in
             //... Manage response
-            self.tableView.loadControl!.endLoading() //Update UILoadControl frame to the new UIScrollView bottom.
+            self.tableView.loadControl?.endLoading() //Update UILoadControl frame to the new UIScrollView bottom.
             self.tableView.reloadData()
         }
     }
