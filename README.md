@@ -26,6 +26,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 Attach ```UILoadControl``` to any ```UIScrollView``` you want, like in the example below:
 ```swift
+
 import UILoadControl
 
 class MyViewController: UIViewController, UIScrollViewDelegate {
@@ -55,6 +56,7 @@ class MyViewController: UIViewController, UIScrollViewDelegate {
         }
     }
 }
+
 ```
 That's it!
 
