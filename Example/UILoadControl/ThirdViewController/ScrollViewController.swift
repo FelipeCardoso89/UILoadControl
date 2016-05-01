@@ -17,7 +17,7 @@ class ScrollViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    scrollView.loadControl = UILoadControl(target: self, action: #selector(ScrollViewController.loadMore(_:)))
+    scrollView.loadControl = UILoadControl(target: self, action: "loadMore:")
     scrollView.delegate = self
   }
   

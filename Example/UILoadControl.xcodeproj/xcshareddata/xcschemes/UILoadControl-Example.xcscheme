@@ -28,7 +28,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "607FACE41AFB9204008FA782"
+               BlueprintIdentifier = "15EDE19A1CC298060051895A"
                BuildableName = "UILoadControl_Tests.xctest"
                BlueprintName = "UILoadControl_Tests"
                ReferencedContainer = "container:UILoadControl.xcodeproj">
@@ -46,7 +46,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "607FACE41AFB9204008FA782"
+               BlueprintIdentifier = "15EDE19A1CC298060051895A"
                BuildableName = "UILoadControl_Tests.xctest"
                BlueprintName = "UILoadControl_Tests"
                ReferencedContainer = "container:UILoadControl.xcodeproj">
