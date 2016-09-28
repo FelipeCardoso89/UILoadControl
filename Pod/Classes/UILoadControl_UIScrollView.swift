@@ -10,81 +10,81 @@ import UIKit
 import Foundation
 
 extension UIScrollView {
-  
-  /*
-  Add new variables to UIScrollView class
-  
-  UIControls can only be placed as subviews of UITableView.
-  So we had to place UILoadControl inside a UIView "loadControlView" and place "loadControlView" as a subview of UIScrollView.
-  */
-  
-  private struct AssociatedKeys {
-    static var delegate: UIScrollViewDelegate?
-    static var loadControl: UILoadControl?
-    private static var loadControlView: UIView?
-  }
-  
-  /*
-  UILoadControl object
-  */
-  public var loadControl: UILoadControl? {
-    get {
-      return objc_getAssociatedObject(self, &AssociatedKeys.loadControl) as? UILoadControl
+    
+    /*
+     Add new variables to UIScrollView class
+     
+     UIControls can only be placed as subviews of UITableView.
+     So we had to place UILoadControl inside a UIView "loadControlView" and place "loadControlView" as a subview of UIScrollView.
+     */
+    
+    private struct AssociatedKeys {
+        static var delegate: UIScrollViewDelegate?
+        static var loadControl: UILoadControl?
+        public static var loadControlView: UIView?
     }
     
-    set {
-      if let newValue = newValue {
-        objc_setAssociatedObject(self, &AssociatedKeys.loadControl, newValue as UILoadControl?, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-        self.updateLoadControl()
-      }
-    }
-  }
-  
-  /*
-  UILoadControl view containers
-  */
-  private var loadControlView: UIView? {
-    get {
-      return objc_getAssociatedObject(self, &AssociatedKeys.loadControlView) as? UIView
+    /*
+     UILoadControl object
+     */
+    public var loadControl: UILoadControl? {
+        get {
+            return objc_getAssociatedObject(self, &AssociatedKeys.loadControl) as? UILoadControl
+        }
+        
+        set {
+            if let newValue = newValue {
+                objc_setAssociatedObject(self, &AssociatedKeys.loadControl, newValue as UILoadControl?, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+                self.updateLoadControl()
+            }
+        }
     }
     
-    set {
-      if let newValue = newValue {
-        objc_setAssociatedObject(self, &AssociatedKeys.loadControlView, newValue as UIView?, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-      }
+    /*
+     UILoadControl view containers
+     */
+    public var loadControlView: UIView? {
+        get {
+            return objc_getAssociatedObject(self, &AssociatedKeys.loadControlView) as? UIView
+        }
+        
+        set {
+            if let newValue = newValue {
+                objc_setAssociatedObject(self, &AssociatedKeys.loadControlView, newValue as UIView?, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            }
+        }
     }
-  }
 }
 
 extension UIScrollView {
-
-  public override func setValue(value: AnyObject?, forKey key: String) {
-    super.setValue(value, forKey: key)
-  }
-  
-  private func updateLoadControl() {
-    guard let loadControl = self.loadControl else {
-      return
+    
+    public func setValue(value: AnyObject?, forKey key: String) {
+        super.setValue(value, forKey: key)
     }
     
-    loadControl.scrollView = self
-    return setupLoadControlViewWithControl(loadControl)
-  }
-  
-  
-  private func setupLoadControlViewWithControl(control: UILoadControl) {
-    
-    guard let loadControlView = self.loadControlView else {
-      self.loadControlView = UIView()
-      self.loadControlView?.clipsToBounds = true
-      self.loadControlView?.addSubview(control)
-      return addSubview(self.loadControlView!)
+    public func updateLoadControl() {
+        guard let loadControl = self.loadControl else {
+            return
+        }
+        
+        loadControl.scrollView = self
+        return setupLoadControlViewWithControl(control: loadControl)
     }
     
-    if loadControlView.subviews.contains(control) {
-      return
-    }
     
-    return loadControlView.addSubview(control)
-  }
+    private func setupLoadControlViewWithControl(control: UILoadControl) {
+        
+        guard let loadControlView = self.loadControlView else {
+            self.loadControlView = UIView()
+            self.loadControlView?.clipsToBounds = true
+            self.loadControlView?.addSubview(control)
+            return addSubview(self.loadControlView!)
+        }
+        
+        if loadControlView.subviews.contains(control) {
+            return
+        }
+        
+        return loadControlView.addSubview(control)
+    }
 }
