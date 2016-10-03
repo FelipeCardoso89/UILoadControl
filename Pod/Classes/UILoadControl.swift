@@ -11,14 +11,14 @@ import Foundation
 
 public class UILoadControl: UIControl {
     
-    public var activityIndicatorView: UIActivityIndicatorView!
-    public var originalDelegate: UIScrollViewDelegate?
+    fileprivate var activityIndicatorView: UIActivityIndicatorView!
+    private var originalDelegate: UIScrollViewDelegate?
     
     internal var target: AnyObject?
     internal var action: Selector!
     
     public var heightLimit: CGFloat = 80.0
-    public var loading: Bool = false
+    public fileprivate (set) var loading: Bool = false
     
     var scrollView: UIScrollView = UIScrollView()
     
@@ -60,8 +60,8 @@ public class UILoadControl: UIControl {
      Update layout at finsih to load
      */
     public func endLoading(){
-        setLoading(isLoading: false)
-        fixPosition()
+        self.setLoading(isLoading: false)
+        self.fixPosition()
     }
     
     public func update() {
@@ -74,8 +74,8 @@ extension UILoadControl {
     /*
      Initilize the control
      */
-    public func initialize(){
-        self.addTarget(self, action: #selector(self.didValueChange(sender:)), for: .valueChanged)
+    fileprivate func initialize(){
+        self.addTarget(self, action: #selector(UILoadControl.didValueChange(sender:)), for: .valueChanged)
         setupActivityIndicator()
     }
     
@@ -104,22 +104,22 @@ extension UILoadControl {
         
         superview.frame = rect
         frame = superview.bounds
-        self.activityIndicatorView.alpha = (((frame.size.height * 100) / heightLimit) / 100)
-        self.activityIndicatorView.center = CGPoint(x:(frame.size.width / 2), y:(frame.size.height / 2))
+        activityIndicatorView.alpha = (((frame.size.height * 100) / heightLimit) / 100)
+        activityIndicatorView.center = CGPoint(x:(frame.size.width / 2), y:(frame.size.height / 2))
     }
     
     /*
      Place control at the scrollView bottom
      */
-    public func fixPosition(){
+    fileprivate func fixPosition(){
         self.updateFrame(rect: CGRect(x:0.0, y:scrollView.contentSize.height, width:scrollView.frame.size.width, height:0.0))
     }
     
     /*
      Set layout to a "loading" or "not loading" state
      */
-    public func setLoading(isLoading: Bool){
-        self.loading = isLoading
+    fileprivate func setLoading(isLoading: Bool){
+        loading = isLoading
         DispatchQueue.main.async { [unowned self] in
             
             var contentInset = self.scrollView.contentInset
@@ -154,7 +154,7 @@ extension UILoadControl {
         bringSubview(toFront: self.activityIndicatorView)
     }
     
-    func didValueChange(sender: AnyObject?){
+    @objc fileprivate func didValueChange(sender: AnyObject?){
         setLoading(isLoading: true)
     }
     

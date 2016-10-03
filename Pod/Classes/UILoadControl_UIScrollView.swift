@@ -21,7 +21,7 @@ extension UIScrollView {
     private struct AssociatedKeys {
         static var delegate: UIScrollViewDelegate?
         static var loadControl: UILoadControl?
-        public static var loadControlView: UIView?
+        fileprivate static var loadControlView: UIView?
     }
     
     /*
@@ -43,7 +43,7 @@ extension UIScrollView {
     /*
      UILoadControl view containers
      */
-    public var loadControlView: UIView? {
+    fileprivate var loadControlView: UIView? {
         get {
             return objc_getAssociatedObject(self, &AssociatedKeys.loadControlView) as? UIView
         }
@@ -62,7 +62,7 @@ extension UIScrollView {
         super.setValue(value, forKey: key)
     }
     
-    public func updateLoadControl() {
+    fileprivate func updateLoadControl() {
         guard let loadControl = self.loadControl else {
             return
         }
@@ -72,7 +72,7 @@ extension UIScrollView {
     }
     
     
-    private func setupLoadControlViewWithControl(control: UILoadControl) {
+    fileprivate func setupLoadControlViewWithControl(control: UILoadControl) {
         
         guard let loadControlView = self.loadControlView else {
             self.loadControlView = UIView()
