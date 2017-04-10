@@ -29,6 +29,6 @@ class UILoadControl_Tests: XCTestCase {
 
   func testActionTarget() {
     let control = UILoadControl()
-    XCTAssertNotNil(control.actionsForTarget(control, forControlEvent: UIControlEvents.ValueChanged))
+    XCTAssertNotNil(control.actions(forTarget: control, forControlEvent: UIControlEvents.valueChanged))
   }
 }

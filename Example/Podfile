@@ -1,10 +1,10 @@
 source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
-target 'UILoadControl_Example', :exclusive => true do
+target 'UILoadControl_Example' do
   pod "UILoadControl", :path => "../"
-end
 
-target 'UILoadControl_Tests', :exclusive => true do
-  pod "UILoadControl", :path => "../"
+  target 'UILoadControl_Tests' do
+    inherit! :search_paths
+  end
 end
