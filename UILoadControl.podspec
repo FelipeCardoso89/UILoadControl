@@ -30,11 +30,10 @@ The UILoadControl can be used as a trigger to load next page of a paginated UICo
   s.source           = { :git => "https://github.com/FelipeCardoso89/UILoadControl.git", :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/FelipeCardoso89'
 
-  s.platform     = :ios, '8.0'
+  s.platform     = :ios, '13.0'
   s.requires_arc = true
 
   s.source_files = 'Pod/Classes/**/*'
   s.frameworks = 'UIKit', 'Foundation'
-
 
 end
